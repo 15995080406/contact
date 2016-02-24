@@ -32,10 +32,7 @@
                 NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
                 [dic setObject:@123 forKey:@"Id"];
 
-                [dic setObject:[userInfoDic objectForKey:USER_CONTACT_LIST_NAME] forKey:USER_CONTACT_LIST_NAME];
-//                [dic setValue:<#(nullable id)#> forKey:<#(nonnull NSString *)#>];
                 [dic writeToFile:filename atomically:YES];
-//                [dic setobject:[] forKey:USER_GROUP_COUNT];
                 [USERDEFAULT setValue:[userInfoDic objectForKey:USER_CONTACT_LIST_NAME] forKey:USER_CONTACT_LIST_NAME];
                 [USERDEFAULT setBool:YES forKey:USER_ISLOGINING];
                 [USERDEFAULT setValue:[userInfoDic objectForKey:USER_TEL] forKey:USER_TEL];
