@@ -8,6 +8,7 @@
 
 #import "LoginVC.h"
 #import <Bmob.h>
+NSMutableDictionary *dic;
 @interface LoginVC ()
 
 @property (weak, nonatomic) IBOutlet UITextField *myTelTF;
@@ -29,17 +30,16 @@
                 NSString *path = [paths objectAtIndex:0];
                 NSString *filename  = [path stringByAppendingPathComponent:@"test.plist"];
                 
-                NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-                [dic setObject:@123 forKey:@"Id"];
+                dic = [[NSMutableDictionary alloc]init];
 
+                [dic setObject:[userInfoDic objectForKey:USER_CONTACT_LIST_NAME] forKey:USER_CONTACT_LIST_NAME];
+                [dic setObject:[userInfoDic objectForKey:USER_TEL] forKey:USER_TEL];
+                [dic setObject:[userInfoDic objectForKey:USER_PASSWORD] forKey:USER_PASSWORD];
+                [dic setObject:[userInfoDic objectForKey:USER_OBJECTID] forKey:USER_OBJECTID];
+                [dic setObject:[userInfoDic objectForKey:USER_ISLOGINING] forKey:USER_ISLOGINING];
+                
                 [dic writeToFile:filename atomically:YES];
-                [USERDEFAULT setValue:[userInfoDic objectForKey:USER_CONTACT_LIST_NAME] forKey:USER_CONTACT_LIST_NAME];
-                [USERDEFAULT setBool:YES forKey:USER_ISLOGINING];
-                [USERDEFAULT setValue:[userInfoDic objectForKey:USER_TEL] forKey:USER_TEL];
-                [USERDEFAULT setValue:[userInfoDic objectForKey:USER_PASSWORD] forKey:USER_PASSWORD];
-                [USERDEFAULT setValue:[userInfoDic objectForKey:USER_OBJECTID] forKey:USER_OBJECTID];
-                [USERDEFAULT setValue:[userInfoDic objectForKey:USER_CONTACT_LIST_NAME] forKey:USER_CONTACT_LIST_NAME];
-                [USERDEFAULT synchronize];
+
                 NSLog(@"登陆成功");
                 [self.navigationController popToRootViewControllerAnimated:YES];
                 

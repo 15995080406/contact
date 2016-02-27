@@ -22,13 +22,15 @@
 }
 
 -(instancetype)initWithcontact:(ContactModel*)contact{
+    [self setBackgroundColor:[UIColor clearColor]];
     self = [[[NSBundle mainBundle]loadNibNamed:@"AllTbaleViewCell" owner:nil options:nil]lastObject];
    _mycontact = contact;
     chooseArr = [NSMutableArray array];
     [chooseArr addObject:self.mycontact.myPersonalTel];
     [chooseArr addObject:self.mycontact.myCompanyTel];
     [self.myHeadButton setBackgroundImage:[UIImage imageNamed:@"map_people"] forState:UIControlStateNormal];
-//    [self.myHeadButton addTarget:self action:@selector(changeHeadButtonImage) forControlEvents:UIControlEventTouchUpInside];
+
+    //    [self.myHeadButton addTarget:self action:@selector(changeHeadButtonImage) forControlEvents:UIControlEventTouchUpInside];
     
     [self.mySMSButton setBackgroundImage:[UIImage imageNamed:@"send_message"] forState:UIControlStateNormal];
     [_mySMSButton addTarget:self action:@selector(sendSMS:) forControlEvents:UIControlEventTouchUpInside];
@@ -46,10 +48,13 @@
     DropDownListView* tellist = [[DropDownListView alloc]initWithFrame:self.myTelButton.frame dataSource:self delegate:self];
 //    tellist.superview = self.myTelButton.contentView;
 //    tellist.superview = self.backgroundView;
+    
+    
     [self.backgroundView addSubview:tellist];
     
     return self;
 }
+
 //-(void)setMycontact:(ContactModel *)mycontact{
 //
 //    if (_mycontact == nil ) {
@@ -83,6 +88,7 @@
     
     
 }
+
 //-(void)changeHeadButtonImage:(NSUInteger)sourcetype{
 //    NSLog(@"change headImage");
 //    UIImagePickerController* imagePickercontroller = [[UIImagePickerController alloc]init];
@@ -128,8 +134,8 @@
 
 -(NSString *)titleInSection:(NSInteger)section index:(NSInteger) index
 {
-//    return [NSString stringWithFormat:@"%@", chooseArr[index]];
-    return nil;
+    return [NSString stringWithFormat:@"%@", chooseArr[index]];
+//    return nil;
 }
 
 -(NSInteger)defaultShowSection:(NSInteger)section

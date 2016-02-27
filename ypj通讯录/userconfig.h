@@ -10,6 +10,8 @@
 #define Header_h
 
 
+#define ColorWithRGB(R,G,B,A) [UIColor colorWithRed:R/255.0 green:G/255.0 B:blue/255.0 alpha:A]
+
 #define winheight [UIScreen mainScreen].bounds.size.height
 #define winwidth [UIScreen mainScreen].bounds.size.width
 #define USERDEFAULT [NSUserDefaults standardUserDefaults]

@@ -13,7 +13,7 @@
 #import "AllTbaleViewCell.h"
 #import "DropDownListView.h"
 #import "DropDownChooseProtocol.h"
-
+#import <QuartzCore/QuartzCore.h>
 #import "TestVC.h"
 @interface AllContactsTableVC ()
 @end
@@ -23,8 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.myAllcontacts = [Group myLoadAllGroupFromDbWithbacktype:USER_TYPE_ALL];
-    
-}
+ }
 
 -(NSMutableArray *)myAllcontacts{
     if (_myAllcontacts ==nil||[USERDEFAULT boolForKey:USER_ISALLRELOADDATA]) {
@@ -63,20 +62,25 @@
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return self.myAllcontacts.count;
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     AllTbaleViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"allcontact"];
     ContactModel* model = self.myAllcontacts[indexPath.row];
 
+//    cell.backgroundView.layer.cornerRadius = 1.0f;
     if (!cell ) {
         cell = [[AllTbaleViewCell alloc]initWithcontact:model];
     }
+    [cell setBackgroundColor:[UIColor clearColor]];
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0,0,cell.frame.size.width,cell.frame.size.height)];
+    container.layer.cornerRadius = 8.0;
 
-
-    
     return cell;
 }
 

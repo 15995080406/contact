@@ -43,7 +43,6 @@
 
 #pragma mark uitableviewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return 2;
 }
 

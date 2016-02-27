@@ -50,7 +50,7 @@ extern int localId;
     self.myBirthClockSwitch.on = self.mycontact.myisRemind;
     self.myShareToOtherSwitch.on = self.mycontact.myisShareToHe;
     
-    //    清除输入按钮
+    //    清空按钮
     self.myNameTF.clearButtonMode = UITextFieldViewModeAlways;
     self.myPersonTelTF.clearButtonMode = UITextFieldViewModeAlways;
     self.myCompanyTelTF.clearButtonMode = UITextFieldViewModeAlways;
@@ -76,7 +76,8 @@ extern int localId;
     [self.myBirthdayDatePickerview setDate:date?date:[NSDate date]];
     self.myMarkTF.text = self.mycontact.mymark;
     [self.myHeadButton addTarget:self action:@selector(mychangeImage:) forControlEvents:UIControlEventTouchUpInside];
-    
+    UIImage *headimage = [UIImage imageNamed:self.mycontact.myHeadImage?self.mycontact.myHeadImage:@"head_default"];
+    [self.myHeadButton setBackgroundImage:headimage forState:UIControlStateNormal];
     
     [self getBirthdayStr];
 }
@@ -308,6 +309,7 @@ extern int localId;
         [self chooseImage:sourceType];
         
         
+        
     }]];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -328,9 +330,7 @@ extern int localId;
             
             [self presentViewController:alertController animated:YES completion:nil];
             
-            
-            
-        }
+            }
         
         
     }]];
@@ -347,12 +347,16 @@ extern int localId;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo{
     
     [self.myHeadButton setBackgroundImage:image forState:UIControlStateNormal];
+    
+//self.mycontact.myHeadImage = image.
+    
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
 //- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-//
+//    NSLog(@"%@",[info objectForKey:UIImagePickerControllerReferenceURL]);
 //
 //}
 

@@ -18,6 +18,7 @@ typedef void(^returnBlock)(BOOL i);
 @property (nonatomic, copy) NSString* myPlace;
 @property (nonatomic, copy) NSString* myGroupName;
 @property (nonatomic, copy) NSString* mymark;
+@property (nonatomic, copy) NSString* myHeadImage;
 
 @property (nonatomic, assign) int mylocalId;
 
