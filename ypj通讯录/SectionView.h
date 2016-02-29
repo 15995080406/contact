@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define USER_SECTIONHIGH 40
+#define USER_SECTIONHIGH 44
 
 @class  Group;
 @interface SectionView : UIView

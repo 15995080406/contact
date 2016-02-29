@@ -99,17 +99,18 @@ extern int localId;
         } ;
         return;
     }else{
-        
+        NSMutableDictionary *dic = [self myisExistNameInDB:self.myNameTF.text];
         if (self.myNameTF.text.length == 0) {
             [self myshowAlertWithTitle:ALERT_TITLE_Attention andmessage:ALERT_MESSAGE_NullName withExistModel:nil];
-        }else if([self myisExistNameInDB:self.myNameTF.text]){
             
-            [self myshowAlertWithTitle:ALERT_TITLE_Attention andmessage:ALERT_MESSAGE_SameName withExistModel:nil];
+        }else if([dic objectForKey:@"exit"]){
+                        
+            [self myshowAlertWithTitle:ALERT_TITLE_Attention andmessage:ALERT_MESSAGE_SameName withExistModel:[dic objectForKey:@"contact"]];
+            
         }else  if(self.myPersonTelTF.text.length == 0 && self.myCompanyTelTF.text.length == 0){
             [self myshowAlertWithTitle:ALERT_TITLE_Attention andmessage:ALERT_MESSAGE_BothTelIsNull withExistModel:nil];
             
         }else{
-#warning 号码不合规则也可插入  需求：有一个联系人
             
             if ([self mySaveContactWithSelf]) {
                 
@@ -250,13 +251,18 @@ extern int localId;
 }
 #pragma mark -数据库操作
 //判断DB中是否存在同名联系人
--(BOOL)myisExistNameInDB:(NSString*)string{
-    BOOL a = NO;
+-(NSMutableDictionary*)myisExistNameInDB:(NSString*)string{
+    NSMutableDictionary *a = [[NSMutableDictionary alloc ]init];
     NSArray* contactAll = [Group myLoadAllContactFromDbWithbacktype:BACK_TYPE_ALL];
     
     for (ContactModel* dataContact in contactAll) {
+        
         if ([string isEqualToString:dataContact.myName]) {
-            a = YES;
+            
+            [a setObject:dataContact forKey:@"contact"];
+            NSNumber *b = [NSNumber numberWithBool:YES];
+            [a setValue:b forKey:@"exit"];
+
         }
     }
     return a;

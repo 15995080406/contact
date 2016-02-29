@@ -287,7 +287,7 @@
             [USERDEFAULT setBool:NO forKey:USER_ISLOGINING];
             [USERDEFAULT synchronize];
 //            删除USERDEFAULT所有信息
-            NSDictionary *defaultsDictionary = [USERDEFAULT dictionaryRepresentation];
+            NSDictionary *defaultsDictionary = [USERDEFAULT dictionaryRepresentation];//userdefault转换成字典
             for (NSString *key in [defaultsDictionary allKeys]) {
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
             }

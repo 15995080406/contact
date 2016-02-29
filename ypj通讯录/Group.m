@@ -22,6 +22,15 @@ FMDatabase* mydb;
     return _myContactArr;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+
+    return self;
+}
+
 +(void)initialize{
     NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"mydb.db"];
     mydb = [FMDatabase databaseWithPath:path];
@@ -83,6 +92,7 @@ FMDatabase* mydb;
     }else if([bactype isEqualToString:BACK_TYPE_GROUP]){
 //        执行下面语句，返回分类好联系人的group数组
     }
+    
     NSMutableArray* resultArr = [[NSMutableArray alloc]init];
     NSArray* groupNameArr;
     NSMutableDictionary* groupNameDic = [NSMutableDictionary dictionary];

@@ -28,7 +28,7 @@
     chooseArr = [NSMutableArray array];
     [chooseArr addObject:self.mycontact.myPersonalTel];
     [chooseArr addObject:self.mycontact.myCompanyTel];
-    [self.myHeadButton setBackgroundImage:[UIImage imageNamed:@"map_people"] forState:UIControlStateNormal];
+    [self.myHeadButton setBackgroundImage:[UIImage imageNamed:self.mycontact.myHeadImage?self.mycontact.myHeadImage:@"head_default.png"] forState:UIControlStateNormal];
 
     //    [self.myHeadButton addTarget:self action:@selector(changeHeadButtonImage) forControlEvents:UIControlEventTouchUpInside];
     

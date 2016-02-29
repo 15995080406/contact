@@ -21,7 +21,7 @@ typedef void (^modify) (NSString*);
 extern FMDatabase* mydb;
 @interface GroupTableVC ()
 {
-    NSMutableArray* changeArr;
+//    NSMutableArray* changeArr;
 }
 @end
 
@@ -30,10 +30,10 @@ extern FMDatabase* mydb;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView setBackgroundColor:[UIColor colorWithRed:105/255.0 green:142/255.0 blue:197/255.0 alpha:1.0]];
-    changeArr = [[NSMutableArray alloc]init];
-    changeArr = [self.mygroupArr mutableCopy];
-    
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:73/255.0 green:205/255.0 blue:255/255.0 alpha:0.8]];
+//    changeArr = [[NSMutableArray alloc]init];
+//    changeArr = [self.mygroupArr mutableCopy];
+//    
     
 }
 
@@ -53,7 +53,7 @@ extern FMDatabase* mydb;
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    //    [self.tableView reloadData];
+        [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,11 +89,8 @@ extern FMDatabase* mydb;
     UIImage *image = [UIImage imageNamed:model.myHeadImage?model.myHeadImage:@"head_default.png"];
     cell.imageView.image  =[self OriginImage:image scaleToSize:CGSizeMake(image.size.width/8*5, image.size.height/8*5)] ;
     
-    NSLog(@"%@",NSStringFromCGPoint(cell.imageView.frame.origin));
-    NSLog(@"%@",NSStringFromCGRect(cell.imageView.frame));
     cell.textLabel.text = model.myName;
-    
-    [cell setBackgroundColor:[UIColor clearColor]];
+    [cell setBackgroundColor:[UIColor clearColor]];//先设置cell底层背景色为空，圆角属性才可见
     
     //contentview 和backgroundview 区别
     UIView *cellBackgroundview = [[UIView alloc]initWithFrame:cell.frame];
@@ -137,7 +134,7 @@ extern FMDatabase* mydb;
     //    NSArray*arr = @[modifyblock,button];
     [button addGestureRecognizer:longGesture];
     
-    //    展开图片
+    //    分组箭头
     UIImageView* imageview = [[UIImageView alloc]init ];
     [imageview setImage:[UIImage imageNamed:@"right.png"]];
     imageview.tag = 4000+section;
@@ -174,41 +171,37 @@ extern FMDatabase* mydb;
         UIImageView* currentIv;
         for (currentIv in [currentSectionView subviews]) {
             if (currentIv.tag == 4000+section) {
-                if (currentGroup.myisopen) {
-                    
-                    [UIView animateWithDuration:0.3 animations:^{
-                        currentIv.transform = CGAffineTransformRotate(currentIv.transform, -M_PI_2);
-                        NSMutableArray *arr = [NSMutableArray array];
+                if (currentGroup.myisopen == YES) {
 
+                    [UIView animateWithDuration:0.3 animations:^{
+                        currentIv.transform = CGAffineTransformRotate(currentIv.transform, DEGREES_TO_RADIANS(90));
+                        NSMutableArray *arr = [NSMutableArray array];
                         
                         for (int i = 0 ; i < currentGroup.myContactArr.count ; i++) {
                             NSIndexPath *indexpath = [NSIndexPath indexPathForRow:i inSection:section];
                             [arr addObject:indexpath];
                         }
+                        [self.tableView insertRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationTop];
                         
-//                        [self.tableView reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationTop];
-                        [self.tableView reloadData];
                     } completion:^(BOOL finished) {
                         if (finished) {
-
-                            [self.tableView reloadData];
-
                         }
-                        
                     }];
                 }else{
                     
-                    
-                    
+
                     [UIView animateWithDuration:0.3 animations:^{
-                        currentIv.transform  = CGAffineTransformRotate(currentIv.transform, DEGREES_TO_RADIANS(90));
+                        currentIv.transform = CGAffineTransformRotate(currentIv.transform, DEGREES_TO_RADIANS(-90));
+                        NSMutableArray *arr = [NSMutableArray array];
                         
-                        
-                    } completion:^(BOOL finished) {
-                        if (finished) {
-                            
-                            
+                        for (int i = 0 ; i < currentGroup.myContactArr.count ; i++) {
+                            NSIndexPath *indexpath = [NSIndexPath indexPathForRow:i inSection:section];
+                            [arr addObject:indexpath];
                         }
+
+                        [self.tableView deleteRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationTop];
+                    } completion:^(BOOL finished) {
+                        
                     }];
 
                 }
@@ -235,7 +228,7 @@ extern FMDatabase* mydb;
     CGPoint touchPoint = [longGesture locationInView:self.tableView];
     
     NSIndexPath* indexpath = [self.tableView indexPathForRowAtPoint:touchPoint];
-    NSArray* arr = self.mygroupArr[indexpath.section];
+    NSArray* arr = [self.mygroupArr[indexpath.section] myContactArr];
     
     if (longGesture.state==UIGestureRecognizerStateBegan) {
         
@@ -249,10 +242,11 @@ extern FMDatabase* mydb;
                 model.myGroupName = tf.text;
                 int i =0;
                 if (i == arr.count-1) {
+                    [USERDEFAULT setBool:YES forKey:USER_ISGROUPRELOADDATA];
                     UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil message:@"修改成功" preferredStyle:UIAlertControllerStyleAlert];
                     [alert addAction:[UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleCancel handler:nil]];
                     [self presentViewController:alert animated:YES completion:nil];
-                    
+
                 }
                 if ([model myUpDataSelfInMYDB]) {
                     i++;

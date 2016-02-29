@@ -34,10 +34,10 @@
 }
 
 - (IBAction)addAction:(id)sender {
-    Editvc* editVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"edit"];
-    editVC.title = @"添加联系人";
+
+    Editvc* editvc = [[Editvc alloc]initWithContact:nil];
     
-      [self presentViewController:editVC animated:YES completion:nil];
+      [self presentViewController:editvc animated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
