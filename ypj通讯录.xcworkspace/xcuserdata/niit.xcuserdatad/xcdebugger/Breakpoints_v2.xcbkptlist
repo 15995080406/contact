@@ -83,28 +83,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/ContactModel.m"
-            timestampString = "475570339.851194"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-myUpDataSelfInMYDB"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Group.m"
-            timestampString = "478361318.854177"
+            timestampString = "478448445.230946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "+mysearchWithString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,43 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478324614.245305"
+            timestampString = "478487648.633043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "-mySaveContactWithSelf"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478324614.245305"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-doneAction:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478324614.245305"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "-mychangeImage:"
             landmarkType = "5">
             <Locations>
@@ -160,15 +112,15 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__24-[Editvc mychangeImage:]_block_invoke244"
+                  symbolName = "__24-[Editvc mychangeImage:]_block_invoke250"
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/Editvc.m"
-                  timestampString = "478362167.825299"
+                  timestampString = "478528510.238299"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "334"
-                  endingLineNumber = "334"
+                  startingLineNumber = "326"
+                  endingLineNumber = "326"
                   offsetFromSymbolStart = "258">
                </Location>
                <Location
@@ -179,11 +131,11 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/Editvc.m"
-                  timestampString = "478362167.825679"
+                  timestampString = "478528510.238611"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "334"
-                  endingLineNumber = "334"
+                  startingLineNumber = "326"
+                  endingLineNumber = "326"
                   offsetFromSymbolStart = "44">
                </Location>
             </Locations>
@@ -212,7 +164,7 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/PersonCenterTVC.m"
-                  timestampString = "478362167.828003"
+                  timestampString = "478528510.24059"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "428"
@@ -227,7 +179,7 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/PersonCenterTVC.m"
-                  timestampString = "478362167.828341"
+                  timestampString = "478528510.241127"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "428"
@@ -291,28 +243,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllTbaleViewCell.m"
-            timestampString = "478253179.103992"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-chooseAtSection:index:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478324614.245305"
+            timestampString = "478487648.633043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-imagePickerController:didFinishPickingImage:editingInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -323,28 +259,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478255854.212979"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478269088.502259"
+            timestampString = "478426458.892168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-changeisopen:"
             landmarkType = "5">
             <Locations>
@@ -356,11 +276,11 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/GroupTableVC.m"
-                  timestampString = "478362167.836223"
+                  timestampString = "478528510.24892"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
                   offsetFromSymbolStart = "1602">
                </Location>
                <Location
@@ -371,11 +291,11 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/GroupTableVC.m"
-                  timestampString = "478362167.836666"
+                  timestampString = "478528510.249266"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
                   offsetFromSymbolStart = "15">
                </Location>
             </Locations>
@@ -388,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478269088.502259"
+            timestampString = "478426458.892168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-changeisopen:"
             landmarkType = "5">
             <Locations>
@@ -404,11 +324,11 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/GroupTableVC.m"
-                  timestampString = "478362167.83841"
+                  timestampString = "478528510.250879"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
                   offsetFromSymbolStart = "1279">
                </Location>
                <Location
@@ -419,11 +339,11 @@
                   moduleName = "ypj&#x901a;&#x8baf;&#x5f55;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niit/Desktop/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/ypj%E9%80%9A%E8%AE%AF%E5%BD%95/GroupTableVC.m"
-                  timestampString = "478362167.838882"
+                  timestampString = "478528510.251197"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
                   offsetFromSymbolStart = "15">
                </Location>
             </Locations>
@@ -436,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478269088.502259"
+            timestampString = "478426458.892168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "-changeisopen:"
             landmarkType = "5">
          </BreakpointContent>
@@ -452,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478269088.502259"
+            timestampString = "478426458.892168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "-changeisopen:"
             landmarkType = "5">
          </BreakpointContent>
@@ -467,12 +387,204 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478324620.752359"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
+            timestampString = "478426458.892168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-changeisopen:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
+            timestampString = "478426458.892168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "-longPress:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
+            timestampString = "478426458.892168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "-longPress:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
+            timestampString = "478426458.892168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "-longPress:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
+            timestampString = "478451068.031341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-doneAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/ContactModel.m"
+            timestampString = "478421439.49724"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-insertModelToDatebaseWithSelf"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/ContactModel.m"
+            timestampString = "478421239.331067"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-openDB"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/ContactModel.m"
+            timestampString = "478421439.49724"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-creatMyTable"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
+            timestampString = "478426458.892168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllTbaleViewCell.m"
+            timestampString = "478536248.56129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-sendSMS:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllContactsTableVC.m"
+            timestampString = "478537015.270798"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-showMessageView:title:body:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
+            timestampString = "478450410.486873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
+            timestampString = "478451159.648699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,12 +596,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Editvc.m"
-            timestampString = "478324690.259481"
+            timestampString = "478487322.947339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "-myisExistNameInDB:"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-changeIsCollection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -499,13 +611,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Group.m"
-            timestampString = "478361318.854177"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/CollectionVC.m"
+            timestampString = "478491853.489173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "+myLoadAllContactFromDbWithbacktype:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -515,13 +627,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Group.m"
-            timestampString = "478361318.854177"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/MyCollectionCell.m"
+            timestampString = "478512845.703043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "+myLoadAllContactFromDbWithbacktype:"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -531,13 +643,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/Group.m"
-            timestampString = "478361318.854177"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/MyCollectionVC.m"
+            timestampString = "478504243.788915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "+myLoadAllContactFromDbWithbacktype:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -547,13 +659,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478357674.090905"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllTbaleViewCell.m"
+            timestampString = "478524880.363749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-changeisopen:"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-initWithcontact:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -563,13 +675,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478359893.467381"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllTbaleViewCell.m"
+            timestampString = "478525950.149724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "-longPress:"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -579,13 +691,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478361463.533911"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllTbaleViewCell.m"
+            timestampString = "478525956.62475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "-longPress:"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-awakeFromNib"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -595,13 +707,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/GroupTableVC.m"
-            timestampString = "478362166.719474"
+            filePath = "ypj&#x901a;&#x8baf;&#x5f55;/AllTbaleViewCell.m"
+            timestampString = "478526145.247472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "-longPress:"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-mycontact"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

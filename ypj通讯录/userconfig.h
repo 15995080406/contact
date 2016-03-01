@@ -27,6 +27,7 @@
 
 #define USER_FONT_GROUPNAME 20
 #define USER_FONT_GROUPNUMBER 20
+#define BackGroundColor [UIColor colorWithRed:73/255.0 green:205/255.0 blue:255/255.0 alpha:0.8]
 
 
 #define USER_LATITUDE @"user_latitude"  //经

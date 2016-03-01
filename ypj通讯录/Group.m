@@ -22,19 +22,14 @@ FMDatabase* mydb;
     return _myContactArr;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-    }
-
-    return self;
-}
 
 +(void)initialize{
-    NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"mydb.db"];
-    mydb = [FMDatabase databaseWithPath:path];
-    NSLog(@"group 中%@",path);
+    NSString* path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *paths = [path stringByAppendingString:@"/mydb.db"] ;
+    
+    mydb = [FMDatabase databaseWithPath:paths];
+    
+    NSLog(@"group 中%@",paths);
     
 }
 
@@ -48,10 +43,13 @@ FMDatabase* mydb;
 }
 
 //根据输入
-+(NSMutableArray*)myLoadAllContactFromDbWithbacktype:(NSString*)bactype{
++(NSMutableArray*)myLoadAllContactFromDbWithbacktype:(NSString*)backtype{
     [mydb open];
+    
 //    mydb 
     NSMutableArray* contactArr = [[NSMutableArray alloc]init];
+    NSMutableArray* resultArr = [[NSMutableArray alloc]init];
+
     NSString *searchSql = [NSString stringWithFormat:@"select * from mycontact"];
     FMResultSet *set = [mydb executeQuery:searchSql];
     while ([set next]) {
@@ -84,43 +82,50 @@ FMDatabase* mydb;
     }
     [mydb close];
     
-    if ([bactype isEqualToString:BACK_TYPE_ALL]) {
-//        返回ContactModel类型的数组
+    if ([backtype isEqualToString:BACK_TYPE_ALL]) {
+//        返回所有人数组
         [mydb close];
         return contactArr;
         
-    }else if([bactype isEqualToString:BACK_TYPE_GROUP]){
-//        执行下面语句，返回分类好联系人的group数组
-    }
-    
-    NSMutableArray* resultArr = [[NSMutableArray alloc]init];
-    NSArray* groupNameArr;
-    NSMutableDictionary* groupNameDic = [NSMutableDictionary dictionary];
-  
-    //    利用字典去重
-    for (ContactModel* model in contactArr) {
-        [groupNameDic setValue:model.myGroupName forKey:model.myGroupName];
-    }
-    groupNameArr = [groupNameDic allKeys];
-//把联系人分组
-    for (int i = 0; i < groupNameArr.count; i++) {
-        NSString* str = groupNameArr[i];
-
-        Group* group = [[Group alloc]init];
-        group.myname = str;
-        if ([str isEqualToString:@""]) {
-            group.myname =@"未分组";
+    }else if([backtype isEqualToString:BACK_TYPE_GROUP]){
+//     返回分好组的数组
+        NSArray* groupNameArr;
+        NSMutableDictionary* groupNameDic = [NSMutableDictionary dictionary];
+        
+        //    利用字典去重
+        for (ContactModel* model in contactArr) {
+            [groupNameDic setValue:model.myGroupName forKey:model.myGroupName];
         }
-        for (ContactModel* inModel in contactArr) {
-
-            if ([inModel.myGroupName isEqualToString:str]) {
+        groupNameArr = [groupNameDic allKeys];
+        //把联系人分组
+        for (int i = 0; i < groupNameArr.count; i++) {
+            NSString* str = groupNameArr[i];
+            
+            Group* group = [[Group alloc]init];
+            group.myname = str;
+            if ([str isEqualToString:@""]) {
+                group.myname =@"未分组";
+            }
+            for (ContactModel* inModel in contactArr) {
                 
-                [group.myContactArr addObject:inModel];
+                if ([inModel.myGroupName isEqualToString:str]) {
+                    
+                    [group.myContactArr addObject:inModel];
+                }
+            }
+            [resultArr addObject:group];
+        }
+
+    }else if ([backtype isEqualToString:BACK_TYPE_COLLECTION]){
+//        返回收藏的联系人数组
+        for (ContactModel *model5 in contactArr) {
+            if (model5.myiscollection) {
+                [resultArr addObject:model5];
             }
         }
-        [resultArr addObject:group];
     }
-    return resultArr;
+    
+       return resultArr;
 }
 
 //搜索

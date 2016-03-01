@@ -14,56 +14,82 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *myCallButton;
 @property (weak, nonatomic) IBOutlet UIButton *mySMSButton;
-
 @end
 @implementation AllTbaleViewCell
 {
     NSMutableArray* chooseArr;
 }
 
+-(ContactModel *)mycontact{
+    if (_mycontact == nil) {
+        self.mycontact = [[ContactModel alloc ]init];
+    }
+    return _mycontact;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.mycontact = [[ContactModel alloc]init];
+    }
+    return self;
+}
+-(void)awakeFromNib{
+    if (_mycontact == nil) {
+        self.mycontact = [[ContactModel alloc]init];
+    }
+}
+
 -(instancetype)initWithcontact:(ContactModel*)contact{
-    [self setBackgroundColor:[UIColor clearColor]];
+
     self = [[[NSBundle mainBundle]loadNibNamed:@"AllTbaleViewCell" owner:nil options:nil]lastObject];
+    self.mycontact = [[ContactModel alloc]init];
+    self.mycontact = contact;
+    chooseArr = [[NSMutableArray alloc]init];
+    [chooseArr addObject:contact.myPersonalTel?contact.myPersonalTel:nil];
+    [chooseArr addObject:contact.myCompanyTel?contact.myCompanyTel:nil];
+//    cellb背景色
+    [self setBackgroundColor:[UIColor clearColor]];
+    UIView *backgroundview = [[UIView alloc]initWithFrame:self.frame];
+    [backgroundview setBackgroundColor:[UIColor whiteColor]];
+    backgroundview.layer.cornerRadius = 10;
+    [self setBackgroundView:backgroundview];
+    
+    
    _mycontact = contact;
     chooseArr = [NSMutableArray array];
     [chooseArr addObject:self.mycontact.myPersonalTel];
     [chooseArr addObject:self.mycontact.myCompanyTel];
     [self.myHeadButton setBackgroundImage:[UIImage imageNamed:self.mycontact.myHeadImage?self.mycontact.myHeadImage:@"head_default.png"] forState:UIControlStateNormal];
 
-    //    [self.myHeadButton addTarget:self action:@selector(changeHeadButtonImage) forControlEvents:UIControlEventTouchUpInside];
-    
+
+//    短信
     [self.mySMSButton setBackgroundImage:[UIImage imageNamed:@"send_message"] forState:UIControlStateNormal];
     [_mySMSButton addTarget:self action:@selector(sendSMS:) forControlEvents:UIControlEventTouchUpInside];
     _mySMSButton.contentMode = UIViewContentModeScaleAspectFit;
-
+//     打电话
     _myCallButton.contentMode = UIViewContentModeScaleAspectFit;
-
     [self.myCallButton setBackgroundImage:[UIImage imageNamed:@"call"] forState:UIControlStateNormal];
     self.myNameLable.text = contact.myName;
-    NSString* currentTel =contact.myPersonalTel?contact.myPersonalTel:contact.myCompanyTel;
+    
+    NSString* currentTel = contact.myPersonalTel?contact.myPersonalTel:contact.myCompanyTel;
     NSString* showTel = [NSString stringWithFormat:@"%@",currentTel];
     [self.myTelButton setTitle:showTel forState:UIControlStateNormal];
     [self.myCallButton addTarget:self action:@selector(callout:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mySMSButton addTarget:self action:@selector(sendSMS:) forControlEvents:UIControlEventTouchUpInside];
     
-    DropDownListView* tellist = [[DropDownListView alloc]initWithFrame:self.myTelButton.frame dataSource:self delegate:self];
-//    tellist.superview = self.myTelButton.contentView;
-//    tellist.superview = self.backgroundView;
+//    有2个电话时会有下拉列表
+
     
     
-    [self.backgroundView addSubview:tellist];
+    
+    
+    
     
     return self;
 }
 
-//-(void)setMycontact:(ContactModel *)mycontact{
-//
-//    if (_mycontact == nil ) {
-//        _mycontact = mycontact;
-//    }
-////    [self.myCallImageView setImage:[UIImage imageNamed:@"call"]];
-////    self.myNameLable.text = self.mycontact.myName;
-////    [self.myTelButton setTitle:_mycontact.myPersonalTel?_mycontact.myPersonalTel:_mycontact.myCompanyTel forState:UIControlStateNormal];
-//}
 
 -(void)callout:(id)sender{
     NSLog(@"calling。。。");
@@ -72,49 +98,33 @@
 //    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",btn.titleLabel.text]; //而这个方法则打电话前先弹框  是否打电话 然后打完电话之后回到程序中 网上说这个方法可能不合法 无法通过审核
     
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号
-#warning ---Need Test Again 功能未测试
-    // （二）返回app （无真机，未测试）1
-//    UIWebView* callWebview = [[UIWebView alloc] init];
-//    NSURL* telURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.myTelButton.currentTitle]];
-//    [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
-//    //记得添加到view上
-//    [self addSubview:callWebview];
+    // （二）返回app
+    UIWebView* callWebview = [[UIWebView alloc] init];
+    NSURL* telURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.myTelButton.currentTitle]];
+    [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
+    //记得添加到view上
+    [self addSubview:callWebview];
     
 }
 
 -(void)sendSMS:(id)sender{
+    NSLog(@"%s",__func__);
+    if ([self.messagedelegate respondsToSelector:@selector(showMessageView:title:body:)]) {
+        [self.messagedelegate showMessageView:@[self.mycontact.myPersonalTel] title:nil body:nil];
     
-    
-    
+    }
     
 }
-
-//-(void)changeHeadButtonImage:(NSUInteger)sourcetype{
-//    NSLog(@"change headImage");
-//    UIImagePickerController* imagePickercontroller = [[UIImagePickerController alloc]init];
-//    imagePickercontroller.delegate = self;
-//    
-//    imagePickercontroller.allowsEditing = NO;
-//    
-//    imagePickercontroller.sourceType = sourcetype;
-//    
-//    [self.superview 
-//    
-//    
-//}
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
-
 
 #pragma mark DropDownChooseDataSource
 
 -(void) chooseAtSection:(NSInteger)section index:(NSInteger)index{
-    
     
     
 }
@@ -142,4 +152,5 @@
 {
     return 0;
 }
+
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #define BACK_TYPE_GROUP @"group"
 #define BACK_TYPE_ALL @"all"
-
+#define BACK_TYPE_COLLECTION @"collection"
 @interface Group : NSObject
 @property (nonatomic, copy) NSString* myname;
 @property (nonatomic,assign)BOOL myisopen;

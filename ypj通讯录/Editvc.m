@@ -16,6 +16,7 @@ extern int localId;
 
 @interface Editvc ()<UIPickerViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *myHeadButton;
+@property (weak, nonatomic) IBOutlet UISwitch *myIscollectionSwitch;
 
 
 
@@ -66,6 +67,8 @@ extern int localId;
     self.myPersonTelTF.text = self.mycontact.myPersonalTel;
     self.myCompanyTelTF.text = self.mycontact.myCompanyTel;
     self.myGroupName.text = self.mycontact.myGroupName;
+    self.myIscollectionSwitch.on = self.mycontact.myiscollection;
+    
     
     //    datepickerView
     NSDateFormatter* dateformate = [[NSDateFormatter alloc]init];
@@ -79,6 +82,8 @@ extern int localId;
     UIImage *headimage = [UIImage imageNamed:self.mycontact.myHeadImage?self.mycontact.myHeadImage:@"head_default"];
     [self.myHeadButton setBackgroundImage:headimage forState:UIControlStateNormal];
     
+    
+    
     [self getBirthdayStr];
 }
 
@@ -88,12 +93,15 @@ extern int localId;
     
     [super didReceiveMemoryWarning];
 } ;
+- (IBAction)changeIsCollection:(id)sender {
+    self.mycontact.myiscollection = ! self.mycontact.myiscollection;
+    
+}
 
 - (IBAction)doneAction:(id)sender {
     if (self.mycontact) {
 
         if ([self mySaveContactWithSelf]) {
-            
             
             [self myshowAlertWithTitle:nil andmessage:@"修改成功" withExistModel:nil];
         } ;
@@ -114,15 +122,9 @@ extern int localId;
             
             if ([self mySaveContactWithSelf]) {
                 
-                
                 [self myshowAlertWithTitle:nil andmessage:ALERT_MESSAGE_AddSuccess withExistModel:nil];
             }
-            
-            
         }
-    
-    
-    
     }
 }
 
@@ -155,11 +157,9 @@ extern int localId;
         [alert addAction:[UIAlertAction actionWithTitle:@"查看" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //  把数据改成已存在的联系人
             Editvc* editVC = [[Editvc alloc]initWithContact:existContact];
-            
             [self presentViewController:editVC animated:YES completion:nil];
             
         }]];
-        
         [alert addAction:[UIAlertAction actionWithTitle:@"仍然添加" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             [self mySaveContactWithSelf];
@@ -194,31 +194,24 @@ extern int localId;
     }else{
         cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self dismissViewControllerAnimated:YES completion:nil];
-            
         }];
         [alert addAction:cancelAction];
-        
     }
-    
     [self presentViewController:alert animated:YES completion:nil];
     
 }
 
 //保存数据
 -(BOOL)mySaveContactWithSelf{
-    BOOL a;
-    ContactModel* contact = [self myCreatAContactWithEditVCInPut];
 //如果有contact则更新数据，没有则保存
     if(self.mycontact ){
-        
-      a=  [contact myUpDataSelfInMYDB];
-        return a;
+        return [self.mycontact myUpDataSelfInMYDB];
     }
     
-    a = [contact insertModelToDatebaseWithSelf];
-    return a;
+    ContactModel* contact = [self myCreatAContactWithEditVCInPut];
+    return [contact insertModelToDatebaseWithSelf];
 }
-//-(void)
+
 -(ContactModel*)myCreatAContactWithEditVCInPut{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy年MM月dd日 HH时mm分ss秒"];
@@ -238,7 +231,6 @@ extern int localId;
     return contact;
 }
 
-
 -(void)myResetAllInfo{
     self.myNameTF.text =nil;
     self.myPersonTelTF.text = nil;
@@ -249,6 +241,7 @@ extern int localId;
     self.myShareToOtherSwitch.on = NO;
     self.myMarkTF.text = nil;
 }
+
 #pragma mark -数据库操作
 //判断DB中是否存在同名联系人
 -(NSMutableDictionary*)myisExistNameInDB:(NSString*)string{
@@ -267,7 +260,6 @@ extern int localId;
     }
     return a;
 }
-
 
 -(NSString*)getBirthdayStr{
     //    NSString* resultStr ;

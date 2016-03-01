@@ -41,8 +41,10 @@ extern FMDatabase *mydb;
 -(void)openDB{
     
     if (![mydb open]) {
-        NSLog(@"open fail");
+        
+        NSLog(@"数据库打开失败");
     }else{
+        [self creatMyTable];
         NSLog(@"数据库打开成功");
     }
 }
@@ -53,16 +55,9 @@ extern FMDatabase *mydb;
 //    autoincrement primary key not null
 }
 
-//+(void)initialize{
-//    NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"mydb.db"];
-//    mydb = [FMDatabase databaseWithPath:path];
-//    NSLog(@"model 里%@",path);
-//}
-
 -(BOOL)insertModelToDatebaseWithSelf{
     [self openDB];
-    [self creatMyTable];
-    
+        
     NSString* insertstr = [NSString stringWithFormat:@"insert into mycontact (name,personaltel,companytel,birthday,place,groupname,mark,isremind,issharetohe,iscollection) values ('%@','%@','%@','%@','%@','%@','%@','%i','%i','%i')",self.myName,self.myPersonalTel,self.myCompanyTel,self.myBirthday,self.myPlace,self.myGroupName?self.myGroupName:@"未分组",self.mymark,self.myisRemind,self.myisShareToHe,self.myiscollection];
     [USERDEFAULT setBool:YES forKey:USER_ISALLRELOADDATA];
     [USERDEFAULT setBool:YES forKey:USER_ISGROUPRELOADDATA];
@@ -73,6 +68,7 @@ extern FMDatabase *mydb;
 
 -(BOOL)deletModelInDBWithLocalId:(int)localId{
     [mydb open];
+    
     NSString* delet = [NSString stringWithFormat:@"delete from mycontact where localId=%i ", localId ];
     BOOL a = [mydb executeStatements:delet];
     [mydb close];

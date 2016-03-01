@@ -7,14 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+
+@protocol showdelegate <NSObject>
+@optional
+
+-(void)showMessageView:(NSArray *)phones title:(NSString *)title body:(NSString *)body;
+
+@end
+
+
 @class ContactModel;
+
 @interface AllTbaleViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIButton *myHeadButton;
-
-@property (nonatomic, copy) ContactModel* mycontact;
-
+@property (strong, nonatomic) ContactModel *mycontact;
 @property (weak, nonatomic) IBOutlet UILabel *myNameLable;
 @property (weak, nonatomic) IBOutlet UIButton *myTelButton;
+@property (weak, nonatomic) UITableViewController<MFMessageComposeViewControllerDelegate,showdelegate> *messagedelegate;
+
 
 /**
  *  创建一个cell

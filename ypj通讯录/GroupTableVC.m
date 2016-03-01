@@ -14,6 +14,10 @@
 #import "SectionView.h"
 #import "Group.h"
 #import "UIImageView+WebCache.h"
+
+#define TAG_SECTIONVIEW_START 3000
+#define TAG_SECTIONBUTTON_START 1000
+
 #define DEGREES_TO_RADIANS(angle) ((angle)/180.0 *M_PI)
 #define ImageWidth 13
 
@@ -29,8 +33,8 @@ extern FMDatabase* mydb;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.tableView setBackgroundColor:[UIColor colorWithRed:73/255.0 green:205/255.0 blue:255/255.0 alpha:0.8]];
+    [USERDEFAULT setBool:YES forKey:USER_ISGROUPRELOADDATA];
+    [self.tableView setBackgroundColor:BackGroundColor];
 //    changeArr = [[NSMutableArray alloc]init];
 //    changeArr = [self.mygroupArr mutableCopy];
 //    
@@ -43,7 +47,7 @@ extern FMDatabase* mydb;
         [USERDEFAULT setBool:NO forKey:USER_ISGROUPRELOADDATA];
         
     }
-    if (  a == YES || _mygroupArr == nil) {
+    if (a == YES) {
         
         _mygroupArr =[Group myLoadAllContactFromDbWithbacktype:BACK_TYPE_GROUP];
         
@@ -52,8 +56,21 @@ extern FMDatabase* mydb;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
-        [self.tableView reloadData];
+    BOOL a =[USERDEFAULT boolForKey:USER_ISGROUPRELOADDATA];
+    if (a) {
+        [self.tableView reloadData];//同时刷新了箭头动画，不行
+
+    }
+
+//    NSMutableArray  *allcell = [NSMutableArray array];
+//    for (int section = 0; section<self.mygroupArr.count; section++) {
+//        for (int row = 0; row<[[self.mygroupArr[section] myContactArr] count]; row++) {
+//            NSIndexPath *indexpath = [NSIndexPath indexPathForRow:row inSection:section];
+//            [allcell addObject:indexpath];
+//        }
+//    }
+//    [self.tableView reloadRowsAtIndexPaths:allcell withRowAnimation:UITableViewRowAnimationNone];
+#warning  仅仅刷新视图不刷新数据？
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,33 +127,27 @@ extern FMDatabase* mydb;
 
 //组名视图
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    Group* group = self.mygroupArr[section];
+    Group* group = self.mygroupArr[section] ;
     SectionView* sectionView = [SectionView initWithGroupname:group.myname andOnlineNumber:0 andAllNumber:(int)group.myContactArr.count];
-    sectionView.tag = section+3000;
+    sectionView.tag = section+TAG_SECTIONVIEW_START;
     //    点击分组动作----打开与关闭分组
     UIButton* button = [[UIButton alloc]initWithFrame:sectionView.frame];
-    button.tag = (int)section+1000;
-    //    button文字设置
+    button.tag = (int)section+TAG_SECTIONBUTTON_START;
+    //    button设置组名（过长会遮盖在线人数）
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitle:group.myname forState:UIControlStateNormal] ;
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    
-    
     [button addTarget:self action:@selector(changeisopen:) forControlEvents:UIControlEventTouchUpInside];
     //    长按动作----编辑组名
     UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     longGesture.minimumPressDuration = 1;//最小长按时间
     longGesture.allowableMovement = 100;
-    
-    //    modify modifyblock = ^(NSString* str ){
-    
-    //    };
-    //    NSArray*arr = @[modifyblock,button];
     [button addGestureRecognizer:longGesture];
     
     //    分组箭头
     UIImageView* imageview = [[UIImageView alloc]init ];
-    [imageview setImage:[UIImage imageNamed:@"right.png"]];
+//    [imageview setImage:[UIImage imageNamed:@"right.png"]];
+    [imageview setImage:[UIImage imageNamed:group.myisopen == YES ? @"down.png":@"right.png"]];
     imageview.tag = 4000+section;
     CGFloat imageviewY = (USER_SECTIONHIGH-ImageWidth)/2;
     [imageview setFrame:CGRectMake(10, imageviewY, ImageWidth, ImageWidth)];
@@ -145,7 +156,6 @@ extern FMDatabase* mydb;
     
     [sectionView addSubview:button];
     [sectionView addSubview:imageview];
-    
     
     return sectionView;
 }
@@ -156,13 +166,13 @@ extern FMDatabase* mydb;
     
     UIButton* btn = (UIButton*)sender;
     
-    int section = (int)btn.tag-1000;
+    int section = (int)btn.tag-TAG_SECTIONBUTTON_START;
     Group* currentGroup = self.mygroupArr[section];
     
     [currentGroup setMyisopen:!currentGroup.myisopen];
     SectionView* currentSectionView;
     for (UIView*view in [self.tableView subviews]) {
-        if (view.tag == 3000+section) {
+        if (view.tag == TAG_SECTIONVIEW_START+section) {
             currentSectionView = (SectionView*)view;
         }
     }
@@ -252,17 +262,11 @@ extern FMDatabase* mydb;
                     i++;
                 }
             }
-            
-            
-            
-            
         }];
         
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
             NSLog(@"取消");
-            //            NSNotification
-            
         }];
         
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {

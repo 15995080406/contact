@@ -15,18 +15,23 @@
 #import "DropDownChooseProtocol.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TestVC.h"
-@interface AllContactsTableVC ()
+#import <MessageUI/MessageUI.h>
+
+#define CellHigh 65
+
+@interface AllContactsTableVC ()<MFMessageComposeViewControllerDelegate,showdelegate>
 @end
 
 @implementation AllContactsTableVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.myAllcontacts = [Group myLoadAllGroupFromDbWithbacktype:USER_TYPE_ALL];
- }
+    [self.tableView setBackgroundColor:BackGroundColor];
+//    [self showMessageView:@[@"13013605329"] title:@"123" body:@"hha"];
+}
 
 -(NSMutableArray *)myAllcontacts{
-    if (_myAllcontacts ==nil||[USERDEFAULT boolForKey:USER_ISALLRELOADDATA]) {
+    if (_myAllcontacts == nil || [USERDEFAULT boolForKey:USER_ISALLRELOADDATA]) {
         [USERDEFAULT removeObjectForKey:USER_NOTIFICATION_ALLCHANGE];
         _myAllcontacts = [Group myLoadAllContactFromDbWithbacktype:BACK_TYPE_ALL];
     }
@@ -80,7 +85,9 @@
     [cell setBackgroundColor:[UIColor clearColor]];
     UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0,0,cell.frame.size.width,cell.frame.size.height)];
     container.layer.cornerRadius = 8.0;
-
+    cell.messagedelegate = self;
+ 
+    
     return cell;
 }
 
@@ -101,15 +108,15 @@
 }
 
 //添加该方法左划会出现红色的delete 该方法主要用于提交操作
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ContactModel *contact = self.myAllcontacts[indexPath.row];
-    //判断呢操作类型 执行不同的代码段
+    //判断操作类型 执行不同的代码段
     if(editingStyle ==  UITableViewCellEditingStyleDelete){
         NSLog(@"执行删除操作");
         //删除数据源
         [self.myAllcontacts removeObject:contact];
+        [contact deletModelInDBWithLocalId:contact.mylocalId];
 
 
             if ([contact deletModelInDBWithLocalId:contact.mylocalId]) {
@@ -121,11 +128,7 @@
                 }]];
                 
                 [self presentViewController:alert animated:YES completion:nil];
-            
-            
             }
-     
-        
         //只刷新局部
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
         
@@ -199,6 +202,46 @@
 }
 */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 76;
+    return CellHigh;
 }
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    switch (result) {
+        case MessageComposeResultSent:
+            //信息传送成功
+            
+            break;
+        case MessageComposeResultFailed:
+            //信息传送失败
+            
+            break;
+        case MessageComposeResultCancelled:
+            //信息被用户取消传送
+            
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)showMessageView:(NSArray *)phones title:(NSString *)title body:(NSString *)body
+{
+    if( [MFMessageComposeViewController canSendText] )
+    {
+        MFMessageComposeViewController * controller = [[MFMessageComposeViewController alloc] init];
+        controller.recipients = phones;
+        controller.navigationBar.tintColor = [UIColor redColor];
+        controller.body = body;
+        controller.messageComposeDelegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
+        [[[[controller viewControllers] lastObject] navigationItem] setTitle:title];//修改短信界面标题
+    }
+    else{
+        NSLog(@"设备没有发送短信功能");
+
+    }
+}
+
+
 @end

@@ -23,7 +23,8 @@ extern FMDatabase* mydb;
 //    [groupNamelable setFrame:CGRectMake(20, 10, groupSize.width, groupSize.height)];
 //    [groupNamelable setTextColor:[UIColor blackColor]];
 //    groupNamelable.text = groupName;
-//
+//    [tempView addSubview:groupNamelable];
+
 
     UILabel* numberLable = [[UILabel alloc]init];
 //    数字自适应长宽
@@ -34,7 +35,6 @@ extern FMDatabase* mydb;
     
     numberLable.text =[NSString stringWithFormat:@"%i/%i",onlineNumber,allNumber];
     
-//    [tempView addSubview:groupNamelable];
     [tempView addSubview:numberLable];
     
     tempView.layer.cornerRadius = 10;

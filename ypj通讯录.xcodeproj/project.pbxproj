@@ -42,6 +42,7 @@
 		A533AFF21C8045DD00ECCE62 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A533AFE01C8045DD00ECCE62 /* UIImageView+HighlightedWebCache.m */; };
 		A533AFF31C8045DD00ECCE62 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A533AFE21C8045DD00ECCE62 /* UIImageView+WebCache.m */; };
 		A533AFF41C8045DD00ECCE62 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A533AFE41C8045DD00ECCE62 /* UIView+WebCacheOperation.m */; };
+		A53949FC1C843AE00075F21B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53949FB1C843AE00075F21B /* MessageUI.framework */; };
 		A53BA6061C2D02FD000528A6 /* GroupTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A53BA6051C2D02FD000528A6 /* GroupTableVC.m */; };
 		A55AC0701C575DDB008B5552 /* AllTbaleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A55AC06E1C575DDB008B5552 /* AllTbaleViewCell.m */; };
 		A55AC0711C575DDB008B5552 /* AllTbaleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55AC06F1C575DDB008B5552 /* AllTbaleViewCell.xib */; };
@@ -60,6 +61,9 @@
 		A5CEAECE1C2BA53F00174483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CEAECC1C2BA53F00174483 /* Main.storyboard */; };
 		A5CEAED01C2BA53F00174483 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5CEAECF1C2BA53F00174483 /* Assets.xcassets */; };
 		A5CEAED31C2BA53F00174483 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CEAED11C2BA53F00174483 /* LaunchScreen.storyboard */; };
+		A5DF5B861C85878E001C325D /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DF5B851C85878E001C325D /* MyCollectionViewController.m */; };
+		A5DF5B8A1C8587B5001C325D /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DF5B881C8587B5001C325D /* MyCollectionViewCell.m */; };
+		A5DF5B8B1C8587B5001C325D /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5DF5B891C8587B5001C325D /* MyCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +139,7 @@
 		A533AFE21C8045DD00ECCE62 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		A533AFE31C8045DD00ECCE62 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		A533AFE41C8045DD00ECCE62 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		A53949FB1C843AE00075F21B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A53BA6041C2D02FD000528A6 /* GroupTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTableVC.h; sourceTree = "<group>"; };
 		A53BA6051C2D02FD000528A6 /* GroupTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTableVC.m; sourceTree = "<group>"; };
 		A55AC06D1C575DDB008B5552 /* AllTbaleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTbaleViewCell.h; sourceTree = "<group>"; };
@@ -162,6 +167,11 @@
 		A5CEAECF1C2BA53F00174483 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5CEAED21C2BA53F00174483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5CEAED41C2BA53F00174483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5DF5B841C85878E001C325D /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
+		A5DF5B851C85878E001C325D /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
+		A5DF5B871C8587B5001C325D /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		A5DF5B881C8587B5001C325D /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
+		A5DF5B891C8587B5001C325D /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53949FC1C843AE00075F21B /* MessageUI.framework in Frameworks */,
 				A588A3231C7F4A4D00EE54AB /* QuartzCore.framework in Frameworks */,
 				A5051B8A1C3E5032007125A6 /* libsqlite3.tbd in Frameworks */,
 				547B2DE8D354207C1F2F590B /* libPods.a in Frameworks */,
@@ -181,6 +192,7 @@
 		9E38ACE85BD9E31A57B3FEB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A53949FB1C843AE00075F21B /* MessageUI.framework */,
 				A588A3221C7F4A4D00EE54AB /* QuartzCore.framework */,
 				A5051B891C3E5032007125A6 /* libsqlite3.tbd */,
 				A4B0E6A1B30B1684697372CF /* libPods.a */,
@@ -221,8 +233,9 @@
 		A513ACF61C3128660031246C /* Function */ = {
 			isa = PBXGroup;
 			children = (
-				A52F4EEA1C4741E5001C4CE5 /* AllContacts */,
 				A52F4EE41C47409E001C4CE5 /* Group */,
+				A52F4EEA1C4741E5001C4CE5 /* AllContacts */,
+				A53949F71C83D2A70075F21B /* Collection */,
 				A52F4EE51C4740B6001C4CE5 /* personcenter */,
 				A52F4EE61C4740D2001C4CE5 /* login */,
 				A52F4EE71C4740EB001C4CE5 /* edit */,
@@ -373,6 +386,18 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		A53949F71C83D2A70075F21B /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				A5DF5B841C85878E001C325D /* MyCollectionViewController.h */,
+				A5DF5B851C85878E001C325D /* MyCollectionViewController.m */,
+				A5DF5B871C8587B5001C325D /* MyCollectionViewCell.h */,
+				A5DF5B881C8587B5001C325D /* MyCollectionViewCell.m */,
+				A5DF5B891C8587B5001C325D /* MyCollectionViewCell.xib */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
 		A57174B91C4E2D3A008B76AE /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +542,7 @@
 				A5051B9D1C3E575C007125A6 /* Info.plist in Resources */,
 				A55AC0711C575DDB008B5552 /* AllTbaleViewCell.xib in Resources */,
 				A571EC9F1C51166800E14EAD /* all_default.png in Resources */,
+				A5DF5B8B1C8587B5001C325D /* MyCollectionViewCell.xib in Resources */,
 				A5CEAED31C2BA53F00174483 /* LaunchScreen.storyboard in Resources */,
 				A5CEAED01C2BA53F00174483 /* Assets.xcassets in Resources */,
 				A5CEAECE1C2BA53F00174483 /* Main.storyboard in Resources */,
@@ -580,9 +606,11 @@
 				A513ACF41C31284F0031246C /* ContactModel.m in Sources */,
 				A533AFF31C8045DD00ECCE62 /* UIImageView+WebCache.m in Sources */,
 				A506003A1C3D2315007D46A1 /* RegsterVC.m in Sources */,
+				A5DF5B8A1C8587B5001C325D /* MyCollectionViewCell.m in Sources */,
 				A5051B851C3E05B7007125A6 /* Util.m in Sources */,
 				A533AFE61C8045DD00ECCE62 /* NSData+ImageContentType.m in Sources */,
 				A533AFEA1C8045DD00ECCE62 /* SDWebImageDownloader.m in Sources */,
+				A5DF5B861C85878E001C325D /* MyCollectionViewController.m in Sources */,
 				A513ACF11C3127560031246C /* LoginVC.m in Sources */,
 				A52F4EED1C47422F001C4CE5 /* AllContactsTableVC.m in Sources */,
 				A533AFF21C8045DD00ECCE62 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -725,7 +753,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ypj通讯录/PrefixHeader.pch";
 				INFOPLIST_FILE = "ypj通讯录/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niit.ypj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -748,7 +776,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ypj通讯录/PrefixHeader.pch";
 				INFOPLIST_FILE = "ypj通讯录/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.niit.ypj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
